@@ -1,0 +1,35 @@
+<%- include('../partials/header')%>
+<div class="container">
+    <h1 class="display-5 text-center">Log Details</h1>
+    <a href="/" class="btn btn-sm" id="btnn2">Homepage</a>
+    <div class="row">
+        <div class="col-md-6 col-sm-12 mt-3" style="height:400px;overflow: auto;">
+            <%users.map((val)=>{%>
+                <div class="card mb-3 m-auto" style="max-width: 300px;">
+  <div class="row g-0" style="max-width:300px">
+    <div class="col-md-4 m-auto  d-flex justify-content-center align-items-center" style="padding:2px;">
+      <img src="images/3.svg" class="img-fluid rounded-start"  style="max-width:80%"alt="...">
+    </div>
+    <div class="col-md-8 m-auto">
+      <div class="card-body">
+        <h5 class="card-title"><%=val.name%></h5>
+        <i class="card-text" style="font-size:12px"><%=val.phone%></i>
+        <p class="card-text" style="font-size:14px"><%=val.email%></p>
+        <p class="card-text">Time: <%=val.time%></p>
+        <p class="card-text"><small class="text-muted">Body part to train: <%=val.body%></small></p>
+        <form action="/logs/<%=val._id%>?_method=DELETE" class="d-inline-block" method="post">
+            <button class="btn btn-danger btn-sm"type="submit">Delete</button>
+        </form>
+        <a href="/logs/<%=val._id%>/edit" class="btn btn-primary btn-sm">Edit</a>
+      </div>
+    </div>
+  </div>
+</div>
+            <%})%>
+        </div>
+        <div class="col-md-6 col-sm-12 mt-3 mb-3">
+      <img src="images/2.svg" class="img-fluid mx-auto" alt="">
+        </div>
+    </div>
+</div>
+<%- include('../partials/footer')%>

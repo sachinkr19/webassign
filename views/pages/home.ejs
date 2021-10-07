@@ -1,0 +1,43 @@
+<%- include('../partials/header')%>
+<div class="container">
+    <h1 class="display-5 text-center">Visitor's App</h1>
+    <div class="row">
+        <div class="col-md-6 col-sm-12 mt-3">
+     <img src="images/1.svg" class="img-fluid mx-auto" alt="">
+        </div>
+        <div class="col-md-6 col-sm-12 mt-3 mb-3">
+          <form action="/visitor" method="POST">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="name" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email"  name="email" placeholder="email"  required>
+              </div>
+              <div class="mb-3">
+                <label for="phone" class="form-label">Mob. No</label>
+                <input type="tel" max="10" class="form-control" id="phone"  name="phone" placeholder="Mobile number"  required>
+              </div>
+              <div class="mb-3">
+                <label for="time" class="form-label">Entry Time</label>
+                <input id="time"  class="form-control" type="time" name="time" required >
+              </div>
+              <div class="mb-3">
+                <select class="form-select"  name="body" aria-label="Default select example">
+                  <option selected>Body Part to train</option>
+                  <option value="Chest">Chest</option>
+                  <option value="Back">Back</option>
+                  <option value="Shoulder">Shoulder</option>
+                  <option value="Biceps">Biceps</option>
+                  <option value="Triceps">Triceps</option>
+                  <option value="legs">Legs</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-md" id="btnn">Submit</button>
+              <a href="/logs" class="btn btn-md" id="btnn1">goto logs</a>
+          </form>
+        </div>
+    </div>
+</div>
+<%- include('../partials/footer')%>
